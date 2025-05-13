@@ -1,3 +1,35 @@
+function addLanguageField() {
+    const group = document.createElement('div');
+    group.className = 'lang-group';
+  
+    const langInput = document.createElement('input');
+    langInput.type = 'text';
+    langInput.name = 'language[]';
+    langInput.placeholder = 'Language (e.g., JavaScript)';
+    langInput.required = true;
+  
+    const proficiencySelect = document.createElement('select');
+    proficiencySelect.name = 'proficiency[]';
+    proficiencySelect.required = true;
+  
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = 'Proficiency';
+    proficiencySelect.appendChild(defaultOption);
+  
+    ['beginner', 'intermediate', 'advanced'].forEach(level => {
+      const option = document.createElement('option');
+      option.value = level;
+      option.textContent = level.charAt(0).toUpperCase() + level.slice(1);
+      proficiencySelect.appendChild(option);
+    });
+  
+    group.appendChild(langInput);
+    group.appendChild(proficiencySelect);
+  
+    document.getElementById('codingLanguagesGroup').appendChild(group);
+  }
+
 document.getElementById('profileForm').addEventListener('submit', async function (e) {
     e.preventDefault();
   
@@ -42,11 +74,11 @@ document.getElementById('profileForm').addEventListener('submit', async function
     };
   
     try {
-      const res = await fetch('/api/profiles', {
+      const res = await fetch('http://localhost:4000/api/profiles', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': 'your-secret-key' // Replace with your actual key
+          'x-api-key': 'sara-secret-2025' 
         },
         body: JSON.stringify(data)
       });

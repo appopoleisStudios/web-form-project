@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-const profileRoutes = require('./routes/profileRoutes');
+const profileRoutes = require('./src/routes/profileRoutes');
 
 const app = express();
 
