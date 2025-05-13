@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit Developer Profile</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Developer Profile Submission</h2>
+  <form id="profileForm">
+    <label for="fullName">Full Name *</label>
+    <input type="text" id="fullName" name="fullName" required />
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="spokenLanguages">Spoken Languages *</label>
+    <div>
+      <input type="checkbox" id="spokenLanguages" name="spokenLanguages" value="English" /> English
+      <input type="checkbox" id="spokenLanguages" name="spokenLanguages" value="Hindi" /> Hindi
+      <input type="checkbox" id="spokenLanguages" name="spokenLanguages" value="Spanish" /> Spanish
+      <input type="checkbox" id="spokenLanguages" name="spokenLanguages" value="Other" /> Other
+    </div>
+
+    <label for="codingLanguages">Coding Languages & Proficiency *</label>
+    <div id="codingLanguagesGroup">
+      <div class="lang-group">
+        <input type="text" placeholder="Language (e.g., JavaScript)" name="language[]" required />
+        <select name="proficiency[]" required>
+          <option value="">Proficiency</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+    </div>
+    <button type="button" onclick="addLanguageField()">Add Another Language</button>
+
+    <label for="yearsExperience">Years of Experience *</label>
+    <input type="number" id="yearsExperience" name="yearsExperience" min="0" required />
+
+    <label for="blockchainExperience">Blockchain Experience *</label>
+    <select id="blockchainExperience" name="blockchainExperience" required>
+      <option value="">Select level</option>
+      <option value="none">None</option>
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+
+    <button type="submit">Submit Profile</button>
+  </form>
+
+  <p id="status" class="success"></p>
+  <p id="error" class="error"></p>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
