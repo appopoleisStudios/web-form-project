@@ -1,7 +1,3 @@
-Here’s a complete and professional `README.md` for your project, covering **both the web form and the JSON upload** interface, ideal for sharing with your development team or as internal documentation:
-
----
-
 # 📝 Developer Profile Submission Portal
 
 This project provides interface to collect developer profile data for Sara's team:  
