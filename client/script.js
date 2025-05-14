@@ -92,6 +92,8 @@ document.getElementById('profileForm').addEventListener('submit', async function
       }
     } catch (err) {
       console.error(err);
+      alert(err);
+
       document.getElementById('error').innerText = 'An error occurred while submitting.';
     }
   });

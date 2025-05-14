@@ -1,33 +1,62 @@
 body {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-  }
-  input, select, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-  }
-  .lang-group {
-    margin-top: 10px;
-  }
-  button {
-    margin-top: 20px;
-    padding: 10px 15px;
-    font-size: 16px;
-  }
-  .error {
-    color: red;
-    font-size: 14px;
-  }
-  .success {
-    color: green;
-  }
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.lang-group {
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.success {
+  color: green;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 40%;
+  justify-content: space-between;
+}
+
+.label-input label {
+  width: 40%;
+}
+
+.label-input input {
+  width: 20%;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}

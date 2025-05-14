@@ -1,16 +1,16 @@
-# 📝 Developer Profile Submission Portal
+# Developer Profile Submission Portal
 
 This project provides interface to collect developer profile data for Sara's team:  
 1. A **web-based form**
 ---
 
-## 📌 Submission Options
+## Submission Options
 
-### 1. 🌐 Web Form  
+### 1. Web Form  
 - **URL:** `https://yourdomain.com/`  
 - **Method:** `POST` (handled by internal frontend script)
 
-### 2. 📦 JSON Upload API  
+### 2. JSON Upload API  
 - **URL:** `https://yourdomain.com/api/profiles`  
 - **Method:** `POST`  
 - **Content-Type:** `application/json`  
@@ -21,20 +21,20 @@ This project provides interface to collect developer profile data for Sara's tea
 
 ---
 
-## 🧾 Field Definitions
+## Field Definitions
 
 | Field                   | Type        | Required | Description                                                                 |
 |------------------------|-------------|----------|-----------------------------------------------------------------------------|
-| `fullName`             | `string`    | ✅ Yes   | Full name of the developer                                                  |
-| `email`                | `string`    | ✅ Yes   | Must be a valid email format                                                |
-| `spokenLanguages`      | `string[]`  | ✅ Yes   | One or more spoken languages (e.g., `["English", "Hindi"]`)                 |
-| `codingLanguages`      | `object`    | ✅ Yes   | Key-value pairs of language and proficiency (`"Python": "intermediate"`)    |
-| `yearsExperience`      | `integer`   | ✅ Yes   | Number of years of total development experience                             |
-| `blockchainExperience` | `string`    | ✅ Yes   | One of: `none`, `beginner`, `intermediate`, `advanced`                      |
+| `fullName`             | `string`    | Yes   | Full name of the developer                                                  |
+| `email`                | `string`    | Yes   | Must be a valid email format                                                |
+| `spokenLanguages`      | `Json`  | Yes   | One or more spoken languages (e.g., `["English", "Hindi"]`)                 |
+| `codingLanguages`      | `Json`    | Yes   | Key-value pairs of language and proficiency (`"Python": "intermediate"`)    |
+| `yearsExperience`      | `integer`   | Yes   | Number of years of total development experience                             |
+| `blockchainExperience` | `string`    | Yes   | One of: `none`, `beginner`, `intermediate`, `advanced`                      |
 
 ---
 
-## ✅ Allowed Values / Formats
+## Allowed Values / Formats
 
 ### `email`
 - Must be valid email (e.g. `name@example.com`)
@@ -62,7 +62,7 @@ This project provides interface to collect developer profile data for Sara's tea
 
 ---
 
-## 📁 Sample JSON File
+## Sample JSON File
 
 ```json
 {
@@ -81,7 +81,7 @@ This project provides interface to collect developer profile data for Sara's tea
 
 ---
 
-## 🔐 Authentication
+## Authentication
 
 All `POST` requests to `/api/profiles` must include:
 
@@ -94,10 +94,10 @@ Replace `your-secret-key` with your actual API key provided to team members.
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 - **Frontend:** HTML5, Vanilla JS (form validation and dynamic fields)
-- **Backend:** Node.js (Express), Prisma ORM, PostgreSQL (or MySQL)
+- **Backend:** Node.js (Express), Prisma ORM, MySql
 - **Security:** Basic API Key authentication
 
 ---
@@ -106,14 +106,30 @@ Replace `your-secret-key` with your actual API key provided to team members.
 
 ```
 project-root/
-├── public/
-│   ├── index.html         # Web form UI
-│   ├── style.css          # Form styling
-│   └── script.js          # Client-side JS for validation & submit
-├── prisma/
-│   └── schema.prisma      # Prisma DB schema
-├── src/
-│   └── server.js          # Express backend
-├── README.md
-└── .env                   # Environment variables (DB, API Key)
+├── client/                        # Frontend (web form)
+│   ├── profile-form.html          # Web form UI
+│   ├── style.css                  # CSS styles
+│   └── script.js                  # Client-side JS
+│
+├── server/                        # Backend (Express + Prisma)
+│   ├── prisma/
+│   │   ├── migrations/            # Prisma migrations
+│   │   └── schema.prisma          # Prisma schema
+│   │
+│   ├── src/                       # Application logic
+│   │   ├── controllers/           # Request handlers
+│   │   ├── middleware/            # Custom Express middleware
+│   │   ├── routes/                # Express routes
+│   │   ├── utils/                 # Utility functions
+│   │   └── validators/            # Request body validation
+│   │
+│   ├── .env                       # Environment variables
+│   ├── app.js                     # Express app setup
+│   ├── server.js                  # HTTP server entry point
+│   ├── package.json               # NPM dependencies
+│   └── package-lock.json          # NPM lock file
+│
+├── .gitignore
+└── README.md
+
 ```
